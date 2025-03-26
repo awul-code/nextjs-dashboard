@@ -1,11 +1,13 @@
+import "@/app/ui/global.css";
+import { inter } from "./ui/font";
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+	return (
+		<html lang="en" className="js-focus-visible" data-js-focus-visible="">
+			<body className={`${inter.className} antialiased`}>{children}</body>
+		</html>
+	);
 }
