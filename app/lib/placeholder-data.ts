@@ -135,7 +135,7 @@ const revenue = [
 	{ month: "Mar", revenue: 2200 },
 	{ month: "Apr", revenue: 2500 },
 	{ month: "May", revenue: 2300 },
-	{ month: "Jun", revenue: 3200 },
+	{ month: "Jun", revenue: 4200 },
 	{ month: "Jul", revenue: 3500 },
 	{ month: "Aug", revenue: 3700 },
 	{ month: "Sep", revenue: 2500 },
