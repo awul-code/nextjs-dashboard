@@ -3,7 +3,8 @@
 	"scripts": {
 		"build": "next build",
 		"dev": "next dev --turbopack",
-		"start": "next start"
+		"start": "next start",
+		"postinstall": "pnpm rebuild bcrypt"
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
@@ -27,5 +28,10 @@
 		"@types/node": "22.10.7",
 		"@types/react": "19.0.7",
 		"@types/react-dom": "19.0.3"
+	},
+	"pnpm": {
+		"ignoredBuiltDependencies": [
+			"bcrypt"
+		]
 	}
 }
