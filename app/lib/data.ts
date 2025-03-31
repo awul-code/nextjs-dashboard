@@ -144,6 +144,9 @@ export async function fetchInvoicesPages(query: string) {
 
 export async function fetchInvoiceById(id: string) {
 	try {
+		if (!id || typeof id !== "string") {
+			throw new Error("Invalid or missing invoice ID.");
+		}
 		const data = await sql<InvoiceForm[]>`
       SELECT
         invoices.id,
@@ -151,13 +154,13 @@ export async function fetchInvoiceById(id: string) {
         invoices.amount,
         invoices.status
       FROM invoices
-      WHERE invoices.id = ${id};
+      WHERE invoices.id = ${id}
     `;
 
 		const invoice = data.map((invoice) => ({
 			...invoice,
 			// Convert amount from cents to dollars
-			amount: invoice.amount / 100,
+			amount: invoice.amount ? invoice.amount / 100 : 0,
 		}));
 
 		return invoice[0];
