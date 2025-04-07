@@ -1,4 +1,10 @@
 import SideNav from "../ui/dashboard/sidenav";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Dashboard",
+};
+
 export const experimental_ppr = true;
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
